@@ -167,18 +167,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) 
             nullptr);
         break;
     }
-    case WM_TIMER:
-
-        switch (wParam)
-        {
-        case IDT_TIMER1:
-
-            return 0;
-
-        case IDT_TIMER2:
-
-            return 0;
-        }
 
     case WM_PAINT: {
         PAINTSTRUCT ps;
@@ -243,20 +231,6 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow) {
     if (!hWnd) {
         return FALSE;
     }
-
-    Time1 = SetTimer(hWnd,
-        IDT_TIMER1,
-        10000,
-        (TIMERPROC)NULL
-    );
-    
-    SetTimer(hWnd,
-        IDT_TIMER2,
-        300000,
-        (TIMERPROC)NULL
-    );
-
-    
 
     ShowWindow(hWnd, nCmdShow);
     UpdateWindow(hWnd);
